@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "1941fa25-d583-471c-8167-5c9b1520c83d",
+		"name": "Vlocity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Browse",
+			"item": [
+				{
+					"name": "Get Offers By Catalog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Provides the ability to retrieve a list of offers (products or promotions) that are modeled within the Vlocity Shared Catalog. "
+					},
+					"response": []
+				},
+				{
+					"name": "Get Offer Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Provides the ability to retrieve a list of offers (products or promotions) that are modeled within the Vlocity Shared Catalog, which is sorted by the Sequence field for Catalog Product Relationships."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Configure",
+			"item": [
+				{
+					"name": "Get Offer Details With Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sfscAuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contextKey\": \"02d5be1e0b0ffe779e544ab7098e9f5a\",\n    \"result\": {\n        \"offerDetails\": {\n            \"offer\": {\n                \"priceResult\": [\n                    {\n                        \"adjustments\": [],\n                        \"overrides\": [],\n                        \"chargeamount\": 10.00,\n                        \"baseamount\": 10.00,\n                        \"Amount__c\": 10.00,\n                        \"IsVirtualPrice__c\": false,\n                        \"IsBasePrice__c\": true,\n                        \"effectiveuntildatespec\": null,\n                        \"effectivefromdatespec\": null,\n                        \"SubType__c\": \"Standard\",\n                        \"Type__c\": \"Price\",\n                        \"RecurringFrequency__c\": null,\n                        \"ChargeType__c\": \"One-time\",\n                        \"DisplayText__c\": null\n                    },\n                    {\n                        \"adjustments\": [],\n                        \"overrides\": [],\n                        \"chargeamount\": 10.00,\n                        \"baseamount\": 10.00,\n                        \"Amount__c\": 10.00,\n                        \"IsVirtualPrice__c\": false,\n                        \"IsBasePrice__c\": true,\n                        \"effectiveuntildatespec\": null,\n                        \"effectivefromdatespec\": null,\n                        \"SubType__c\": \"Standard\",\n                        \"Type__c\": \"Price\",\n                        \"RecurringFrequency__c\": \"Monthly\",\n                        \"ChargeType__c\": \"Recurring\",\n                        \"DisplayText__c\": null\n                    }\n                ],\n                \"Name\": \"TV Medium\",\n                \"ProductCode\": \"VLO-TV-0026\",\n                \"Product2Id\": \"01t3k000004mTGYAA2\",\n                \"PricebookEntryId\": \"01u3k00000OWNWtAAP\",\n                \"Quantity\": 100.0,\n                \"minQuantity\": 0.0,\n                \"maxQuantity\": 99999.0,\n                \"groupMinQuantity\": 0,\n                \"groupMaxQuantity\": 99999,\n                \"productHierarchyPath\": \"01t3k000004mTGYAA2\",\n                \"lineNumber\": \"0001\",\n                \"Id\": \"01t3k000004mTGYAA2\",\n                \"Description\": \"We've got it covered for drama queens, fact geeks, music fans and kids on over 300 channels.\",\n                \"addtocart\": {\n                    \"rest\": {\n                        \"method\": \"POST\",\n                        \"link\": \"v3/catalogs/DEALS/basket\",\n                        \"params\": {\n                            \"offer\": \"VLO-TV-0026\",\n                            \"basketAction\": \"AddWithNoConfig\"\n                        }\n                    }\n                },\n                \"offerType\": \"Product\"\n            }\n        }\n    },\n    \"errorCode\": \"INVOKE-200\",\n    \"error\": \"OK\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceCloudUrl}}/services/apexrest/vlocity_cmt/v3/catalogs/deals/offers/VLO-TV-0026",
+							"host": [
+								"{{serviceCloudUrl}}"
+							],
+							"path": [
+								"services",
+								"apexrest",
+								"vlocity_cmt",
+								"v3",
+								"catalogs",
+								"deals",
+								"offers",
+								"VLO-TV-0026"
+							]
+						},
+						"description": "Provides the ability to pass offer details that are modeled within the Vlocity Shared Catalog in order to retrieve pricing updates. This API requires the catalog code and specified offer code parameters, the latter of which identifies the product that will be detailed in the response. Pricing eligibility can be determined by API parameters. "
+					},
+					"response": [
+						{
+							"name": "Get Offer Details With Configuration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"offerDetails\": {\n            \"offer\": {\n                \"priceResult\": [\n                    {\n                        \"adjustments\": [],\n                        \"overrides\": [],\n                        \"chargeamount\": 10.00,\n                        \"baseamount\": 10.00,\n                        \"Amount__c\": 10.00,\n                        \"IsVirtualPrice__c\": false,\n                        \"IsBasePrice__c\": true,\n                        \"effectiveuntildatespec\": null,\n                        \"effectivefromdatespec\": null,\n                        \"SubType__c\": \"Standard\",\n                        \"Type__c\": \"Price\",\n                        \"RecurringFrequency__c\": null,\n                        \"ChargeType__c\": \"One-time\",\n                        \"DisplayText__c\": null\n                    },\n                    {\n                        \"adjustments\": [],\n                        \"overrides\": [],\n                        \"chargeamount\": 10.00,\n                        \"baseamount\": 10.00,\n                        \"Amount__c\": 10.00,\n                        \"IsVirtualPrice__c\": false,\n                        \"IsBasePrice__c\": true,\n                        \"effectiveuntildatespec\": null,\n                        \"effectivefromdatespec\": null,\n                        \"SubType__c\": \"Standard\",\n                        \"Type__c\": \"Price\",\n                        \"RecurringFrequency__c\": \"Monthly\",\n                        \"ChargeType__c\": \"Recurring\",\n                        \"DisplayText__c\": null\n                    }\n                ],\n                \"Name\": \"TV Medium\",\n                \"ProductCode\": \"VLO-TV-0026\",\n                \"Product2Id\": \"01t3k000004mTGYAA2\",\n                \"PricebookEntryId\": \"01u3k00000OWNWtAAP\",\n                \"Quantity\": 100.0,\n                \"minQuantity\": 0.0,\n                \"maxQuantity\": 99999.0,\n                \"groupMinQuantity\": 0,\n                \"groupMaxQuantity\": 99999,\n                \"productHierarchyPath\": \"01t3k000004mTGYAA2\",\n                \"lineNumber\": \"0001\",\n                \"Id\": \"01t3k000004mTGYAA2\",\n                \"Description\": \"We've got it covered for drama queens, fact geeks, music fans and kids on over 300 channels.\",\n                \"addtocart\": {\n                    \"rest\": {\n                        \"method\": \"POST\",\n                        \"link\": \"v3/catalogs/DEALS/basket\",\n                        \"params\": {\n                            \"offer\": \"VLO-TV-0026\",\n                            \"basketAction\": \"AddWithNoConfig\"\n                        }\n                    }\n                },\n                \"offerType\": \"Product\"\n            }\n        }"
+								},
+								"url": {
+									"raw": "{{serviceCloudUrl}}/services/apexrest/vlocity_cmt/v3/catalogs/deals/offers/VLO-TV-0026",
+									"host": [
+										"{{serviceCloudUrl}}"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"vlocity_cmt",
+										"v3",
+										"catalogs",
+										"deals",
+										"offers",
+										"VLO-TV-0026"
+									]
+								}
+							},
+							"status": "Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Apr 2020 14:27:33 GMT"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Public-Key-Pins-Report-Only",
+									"value": "pin-sha256=\"9n0izTnSRF+W4W4JTq51avSXkWhQB8duS2bxVLfzXsY=\"; pin-sha256=\"5kJvNEMw0KjrCAu7eXY5HZdvyCS13BbA0VJG1RSP91w=\"; pin-sha256=\"njN4rRG+22dNXAi+yb8e3UMypgzPUPHlv4+foULwl1g=\"; max-age=86400; includeSubDomains; report-uri=\"https://a.forcesslreports.com/hpkp-report/nullm\";"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=86400, report-uri=\"https://a.forcesslreports.com/Expect-CT-report/nullm\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache,must-revalidate,max-age=0,no-store,private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"errorCode\": \"APEX_ERROR\",\n        \"message\": \"System.JSONException: no content to map to Object due to end of input\\n\\n(System Code)\\n\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Create Basket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Provides the ability to create a basket with or without offer (product or promotions) configurations that are modeled within the Vlocity Shared Catalog. The specified catalog code identifies the catalog that contains the offers.         \n\n\n\n(BasketAction: AddWithNoConfig): Add/Delete Items to/from Basket w/o Configuration. This method requires the specified offer code.\n(BasketAction: AddAfterConfig): Add/Delete Items to/from Basket w/Configuration. This method requires the response from the Get Offer Details API in the request body."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "Create Order in Vlocity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Retrieve Vlocity AuthToken",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "12f5cbc7-330d-4cb0-91aa-8b6f5044172b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5010dd8-7f42-47b3-bb6c-cac62d262b98",
+						"exec": [
+							"// Audit the post-execution test script",
+							"console.log(' ----------------------------------------------------------');",
+							"console.log(' - START: Executing SFSC RetrieveAuthToken Post-Execution Script')",
+							"console.log(' ----------------------------------------------------------');",
+							"",
+							"// Parse the response data",
+							"var parsedResponse = JSON.parse(responseBody);",
+							"",
+							"// Check if the parsedResponse has an access-token key",
+							"if (parsedResponse.hasOwnProperty('access_token')) {",
+							"    ",
+							"    // If an access-token exists, then set it as part of the environment",
+							"    postman.setEnvironmentVariable('sfscAuthToken', parsedResponse.access_token);",
+							"    ",
+							"    // Write the serviceCloud Url based on the instance_url in the response",
+							"    postman.setEnvironmentVariable('serviceCloudUrl', parsedResponse.instance_url);",
+							"    ",
+							"    // Audit that the access Token was successfully written",
+							"    console.log(' - successfully retrieved and wrote authorization token and instance url');",
+							"    console.log(' - ' + parsedResponse.access_token);",
+							"    console.log(' - ' + parsedResponse.instance_url);",
+							"    ",
+							"} else {",
+							"    ",
+							"    // Audit that no auth-token was found in the parsed response",
+							"    console.log(' - please check your credentials and examine the response; no authorization token was found');",
+							"    ",
+							"}",
+							"",
+							"console.log(' ----------------------------------------------------------');",
+							"console.log(' -   END: Executing SFSC RetrieveAuthToken Post-Execution Script')",
+							"console.log(' ----------------------------------------------------------');",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "... represents the content-type of the request",
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{authTokenUrl}}/services/oauth2/token?grant_type=password&client_id={{sfscConsumerKey}}&client_secret={{sfscConsumerSecret}}&username={{sfscUsername}}&password={{sfscPassword}}{{sfscSecurityToken}}",
+					"protocol": "https",
+					"host": [
+						"{{authTokenUrl}}"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "... represents the grant-type to be performed"
+						},
+						{
+							"key": "client_id",
+							"value": "{{sfscConsumerKey}}",
+							"description": "... identifies the clientId associated to the SCC Integration User account"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{sfscConsumerSecret}}",
+							"description": "... identifies the clientSecret associated to the SCC Integration User account"
+						},
+						{
+							"key": "username",
+							"value": "{{sfscUsername}}",
+							"description": "... identifies the username associated to the SCC Integration User account"
+						},
+						{
+							"key": "password",
+							"value": "{{sfscPassword}}{{sfscSecurityToken}}",
+							"description": "... represents the password + securityToken associated to the SCC Integration User account"
+						}
+					]
+				},
+				"description": "... this request is used to confirm that a REST access token can be retrieve using the credentials and security token associated to the SCC Integration User.  This request leverages the Salesforce grant-type of \"password\".  A successful request will generate an access token of token_type \"Bearer\" that must be attached to all subsequent REST interactions (ex. creating cases, accounts, and orders).\n- For details on this request-type, please visit https://help.salesforce.com/articleView?id=remoteaccess_oauth_username_password_flow.htm&type=5.\n- Once the bearer token has been generated, please update the Authorization tab in the parent project folder to include the generated Bearer token."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
